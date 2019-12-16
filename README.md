@@ -3,7 +3,7 @@ A simple library SQL generator Native PHP
 # INSTALL
 Download the ZIP or use
 ```
-git clone https://github.com/yudhioktaviangule/sql-native-gen
+composer create-project yudhigule/sql-gen
 ```
 # Usage
 ```php
@@ -13,9 +13,10 @@ git clone https://github.com/yudhioktaviangule/sql-native-gen
  $sqlGenerator = new SQL("table_name");
 ```
 # Example
+i ran testing at the test directory
 ```php 
 <?php 
- require "./src/autoload.php";
+ require_once __DIR__ . '/../vendor/autoload.php';
  use SQLGen\SQLGenerator as SQL;
 
  $sqlGenerator = new SQL("members");
