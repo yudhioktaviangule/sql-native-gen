@@ -17,14 +17,16 @@ git clone https://github.com/yudhioktaviangule/sql-native-gen
 <?php 
  require "./src/autoload.php";
  use SQLGen\SQLGenerator as SQL;
+
  $sqlGenerator = new SQL("members");
  $sql = $sqlGenerator->update(['id'=>1,"name"=>"adamas"])->where('id',1)->sql();
  $sql1 = $sqlGenerator->select(['id','name'])->where('id',1)->sql();
- var_dump($sql);
- var_dump($sql1);
 
+printf("%s \n",$sql);
+printf("%s \n",$sql1);
 ```
 then it will return
 ```sql
-"SELECT id,name FROM products WHERE id = '1' AND price > '3000' OR colors = 'white' AND name LIKE '%Mercy%' "
+UPDATE members SET id='1',name='adamas' WHERE id = '1' 
+SELECT id,name FROM members WHERE id = '1'  
 ```
