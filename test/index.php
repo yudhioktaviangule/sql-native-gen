@@ -16,8 +16,6 @@
 				 ->sql();
  $sqlSelect = $sqlGenerator->select(['id','name'])->where('id',1)->sql();
  $sqlDelete = $sqlGenerator->delete()->where('id',1)->sql();
-
- 
 printf("%s \n",$sqlInsert);
 printf("%s \n",$sqlUpdate);
 printf("%s \n",$sqlSelect);
