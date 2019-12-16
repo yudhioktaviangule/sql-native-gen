@@ -5,6 +5,7 @@ use \PDO;
 use QuerySelectGenerator;
 class Connection {
 	private $db;
+
 	function __construct(
 		$options=[
 			"host"=>"localhost",
@@ -16,9 +17,9 @@ class Connection {
 		$this->db = $db;
 	}
 
-	public function FunctionName($value='')
+	public static function exec($type)
 	{
-		# code...
+		
 	}
 	public function destroy()
 	{
