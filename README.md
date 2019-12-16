@@ -8,26 +8,20 @@ git clone https://github.com/yudhioktaviangule/sql-native-gen
 # Usage
 ```php
 <?php 
-require "./src/autoload.php";
-use SQLGen\QuerySelectGenerator as SQLSelect;
-
-$SQL = new SQLSelect("<table_name>");
+ require "./src/autoload.php";
+ use SQLGen\SQLGenerator as SQL;
+ $sqlGenerator = new SQL("table_name");
 ```
 # Example
-```php
+```php 
 <?php 
-require "./src/autoload.php";
-use SQLGen\QuerySelectGenerator as SQLSelect;
-
-$SQL = new SQLSelect("products");
-
-$sql = $SQL->select(['id','name'])
-    ->where("id",1)
-    ->where("price",3000,">")
-    ->orWhere("colors","white")
-    ->where("name",'%Mercy%',"LIKE")
-    ->sql();
-var_dump($sql);
+ require "./src/autoload.php";
+ use SQLGen\SQLGenerator as SQL;
+ $sqlGenerator = new SQL("members");
+ $sql = $sqlGenerator->update(['id'=>1,"name"=>"adamas"])->where('id',1)->sql();
+ $sql1 = $sqlGenerator->select(['id','name'])->where('id',1)->sql();
+ var_dump($sql);
+ var_dump($sql1);
 
 ```
 then it will return
