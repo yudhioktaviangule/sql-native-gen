@@ -1,5 +1,5 @@
 <?php 
- require_once("../src/Connection.php");
+ require_once("../src/autoload.php");
  use SQLGen\Connection;
 
  $connect = new Connection([
