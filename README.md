@@ -1,2 +1,2 @@
-#Intro
+# Intro
 simple SQL generator
