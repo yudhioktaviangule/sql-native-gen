@@ -1,7 +1,7 @@
 {
     "name": "yudhigule/sql-gen",
     "description": "A simple sql generator library",
-    "type": "library",
+    "type": "project",
     "authors": [
         {
             "name": "Yudhi Oktavian Gule",
