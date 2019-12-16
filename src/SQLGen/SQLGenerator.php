@@ -34,6 +34,5 @@ class SQLGenerator{
     public function create($fields)
     {
         return $this->insert->insert($fields);
-        
     }
 }
