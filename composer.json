@@ -1,7 +1,7 @@
 {
     "name": "yudhigule/sql-gen",
     "description": "A simple sql generator library",
-    "type": "project",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
