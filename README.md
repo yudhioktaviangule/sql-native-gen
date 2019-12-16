@@ -8,7 +8,7 @@ composer create-project yudhigule/sql-gen
 # Usage
 ```php
 <?php 
- require "./src/autoload.php";
+ require_once __DIR__ . '/../vendor/autoload.php';
  use SQLGen\SQLGenerator as SQL;
  $sqlGenerator = new SQL("table_name");
 ```
