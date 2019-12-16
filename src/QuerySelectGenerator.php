@@ -100,7 +100,17 @@ class QuerySelectGenerator{
         }else{
             $temp="";
         }
-        $sql="$sql $temp";
+        $sql    = "$sql $temp";
+        $limit  = $builder->selects->limit;
+        $offset = $builder->selects->offset;
+        $temp   = "";
+        if($limit>0){
+            $temp = "LIMIT $limit";
+            if($offset>0){
+                $temp = "LIMIT $limit OFFSET $offset";
+            }
+        }   
+        $sql   = "$sql $temp";
         return $sql;
     }
 }
