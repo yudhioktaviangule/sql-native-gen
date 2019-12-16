@@ -3,8 +3,21 @@
  use SQLGen\SQLGenerator as SQL;
 
  $sqlGenerator = new SQL("members");
- $sql = $sqlGenerator->update(['id'=>1,"name"=>"adamas"])->where('id',1)->sql();
- $sql1 = $sqlGenerator->select(['id','name'])->where('id',1)->sql();
+ $insertParams = [
+	 "id"=>1,
+	 "name"=>'yudhigule',
+	 'email'=>'yudhigule@sqlgen.com',
+	 'age'=>24
+ ];
+ $sqlInsert = $sqlGenerator->create($insertParams)->sql();
+ $sqlUpdate = $sqlGenerator->update($insertParams)
+				 ->where("name","yudhigule")
+				 ->where("age",24,'>')
+				 ->sql();
+ $sqlSelect = $sqlGenerator->select(['id','name'])->where('id',1)->sql();
+ $sqlDelete = $sqlGenerator->delete()->where('id',1)->sql();
 
-printf("%s \n",$sql);
-printf("%s \n",$sql1);
+printf("%s \n",$sqlInsert);
+printf("%s \n",$sqlUpdate);
+printf("%s \n",$sqlSelect);
+printf("%s \n",$sqlDelete);

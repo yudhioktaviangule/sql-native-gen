@@ -13,21 +13,37 @@ composer create-project yudhigule/sql-gen
  $sqlGenerator = new SQL("table_name");
 ```
 # Example
-i ran testing at the test directory
+For example I ran testing at the test directory
 ```php 
+<?php 
 <?php 
  require_once __DIR__ . '/../vendor/autoload.php';
  use SQLGen\SQLGenerator as SQL;
 
  $sqlGenerator = new SQL("members");
- $sql = $sqlGenerator->update(['id'=>1,"name"=>"adamas"])->where('id',1)->sql();
- $sql1 = $sqlGenerator->select(['id','name'])->where('id',1)->sql();
+ $insertParams = [
+	 "id"=>1,
+	 "name"=>'yudhigule',
+	 'email'=>'yudhigule@sqlgen.com',
+	 'age'=>24
+ ];
+ $sqlInsert = $sqlGenerator->create($insertParams)->sql();
+ $sqlUpdate = $sqlGenerator->update($insertParams)
+				 ->where("name","yudhigule")
+				 ->where("age",24,'>')
+				 ->sql();
+ $sqlSelect = $sqlGenerator->select(['id','name'])->where('id',1)->sql();
+ $sqlDelete = $sqlGenerator->delete()->where('id',1)->sql();
 
-printf("%s \n",$sql);
-printf("%s \n",$sql1);
+printf("%s \n",$sqlInsert);
+printf("%s \n",$sqlUpdate);
+printf("%s \n",$sqlSelect);
+printf("%s \n",$sqlDelete);
 ```
 then it will return
 ```sql
-UPDATE members SET id='1',name='adamas' WHERE id = '1' 
+INSERT INTO members(id,name,email,age) VALUES('1','yudhigule','yudhigule@sqlgen.com','24') 
+UPDATE members SET id='1',name='yudhigule',email='yudhigule@sqlgen.com',age='24' WHERE name = 'yudhigule' AND age > '24' 
 SELECT id,name FROM members WHERE id = '1'  
+DELETE FROM members WHERE id = '1' 
 ```
