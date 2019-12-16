@@ -1,6 +1,5 @@
 <?php
 namespace SQLGen;
-
 class QueryDeleteGenerator{
     private $builder = [
         "deletes"   => [

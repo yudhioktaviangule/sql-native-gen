@@ -27,6 +27,7 @@ class QueryInsertGenerator{
         $this->builder['insert']['values'] = $values;
         return $this;
     }
+    
     public function sql()
     {
         $sql = "";

@@ -3,7 +3,6 @@ namespace SQLGen;
 
 class QuerySelectGenerator{
 	private $builder = [
-    
         "selects"   => [
             "select"  => [],
             "from"    => [],
@@ -12,9 +11,7 @@ class QuerySelectGenerator{
             "offset" => 0,
             "groupBy" => [],
             "orderBy" => [],
-
         ],
-        
     ];
 
     public function __construct($tableName) {

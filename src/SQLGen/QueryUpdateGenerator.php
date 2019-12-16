@@ -9,7 +9,6 @@ class QueryUpdateGenerator{
             "where"   => [],
         ],
     ];
-
     public function __construct($tableName) {
         $this->builder['updates']['from'] = $tableName;
     }
