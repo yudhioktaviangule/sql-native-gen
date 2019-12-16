@@ -1,0 +1,23 @@
+{
+    "name": "yudhigule/sql-gen",
+    "description": "A simple sql generator library",
+    "type": "library",
+    "license": "no",
+    "authors": [
+        {
+            "name": "Yudhi Oktavian Gule",
+            "email": "yudhioktavian@icloud.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload":{
+        "psr-0": {
+            "SQLGen": "src/"
+        }
+    }
+}
+
+
