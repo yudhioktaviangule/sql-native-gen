@@ -1,6 +1,6 @@
 {
     "name": "yudhigule/sql-gen",
-    "description": "A simple sql generator library",
+    "description": "A simple sql generator library for PHP",
     "type": "library",
     "license": "MIT",
     "authors": [
