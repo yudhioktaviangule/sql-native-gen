@@ -3,13 +3,13 @@
  use SQLGen\QuerySelectGenerator as SQLSelect;
 
  $x = new SQLSelect("products");
- $sql = $x->select(['id',"name"])
- 		  ->where("id",4)
-		   ->orWhere("price",'30000','>')
-		   ->limit(5)
-		   ->offset(2)
- 		  ->where("name",'%anchor%','LIKE');
- var_dump($sql->sql()); 
+ $sql = $x->select(['id','name'])
+			->where("id",1)
+			->where("price",3000,">")
+			->orWhere("colors","white")
+			->where("name",'%Mercy%',"LIKE")
+			->sql();
+ var_dump($sql); 
 
 
 	

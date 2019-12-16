@@ -1,5 +1,7 @@
 # Intro
-simple SQL generator
+simple SQL generator Library for PHP
+# INSTALL
+simple SQL generator Library for PHP
 # Usage
 ```php
 <?php 
@@ -23,5 +25,9 @@ $sql = $SQL->select(['id','name'])
     ->where("name",'%Mercy%',"LIKE")
     ->sql();
 var_dump($sql);
-#it will return SELECT id,name from products WHERE id='1' AND price > '3000' OR WHERE colors='white' AND name LIKE '%mercy%'
+
+```
+it will return
+```sql
+string(107) "SELECT id,name FROM products WHERE id = '1' AND price > '3000' OR colors = 'white' AND name LIKE '%Mercy%' "
 ```
