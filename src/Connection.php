@@ -17,7 +17,7 @@ class Connection {
 		$this->db = $db;
 	}
 
-	public static function exec($type)
+	public static function execSQL($type)
 	{
 		
 	}

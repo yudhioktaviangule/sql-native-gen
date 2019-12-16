@@ -1,3 +1,5 @@
 <?php
-	require_once('Connection.php');
-	require_once('QuerySelectGenerator.php');
+	require('Connection.php');
+	require('QuerySelectGenerator.php');
+
+

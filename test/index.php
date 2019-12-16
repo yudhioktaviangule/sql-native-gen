@@ -1,12 +1,13 @@
 <?php 
- require_once("../src/autoload.php");
- use SQLGen\Connection;
+ require "./src/autoload.php";
+ use SQLGen\QuerySelectGenerator as SQLSelect;
 
- $connect = new Connection([
- 	"host"=>"localhost",
- 	"user"=>"root",
- 	"pass"=>"123",
- 	"db" => "db_mdcl"
- ]);
+ $x = new SQLSelect("products");
+ $sql = $x->select(['id',"name"])
+ 		  ->where("id",4)
+ 		  ->orWhere("price",'30000','>')
+ 		  ->where("name",'%anchor%','LIKE');
+ var_dump($sql->sql()); 
+
 
 	
