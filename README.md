@@ -1,7 +1,10 @@
 # Intro
-simple SQL generator Library for PHP
+A simple library SQL generator Native PHP
 # INSTALL
-simple SQL generator Library for PHP
+Download the ZIP or use
+```
+git clone https://github.com/yudhioktaviangule/sql-native-gen
+```
 # Usage
 ```php
 <?php 
@@ -27,7 +30,7 @@ $sql = $SQL->select(['id','name'])
 var_dump($sql);
 
 ```
-it will return
+then it will return
 ```sql
-string(107) "SELECT id,name FROM products WHERE id = '1' AND price > '3000' OR colors = 'white' AND name LIKE '%Mercy%' "
+"SELECT id,name FROM products WHERE id = '1' AND price > '3000' OR colors = 'white' AND name LIKE '%Mercy%' "
 ```
